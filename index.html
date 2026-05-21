@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+    <title>О компании — Natural Health</title>
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/about.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+<div class="page-content">
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__row">
+                <div class="header__logo">
+                    <a href="/">
+                        <svg width="119" height="44" viewBox="0 0 119 44" fill="none">
+                            <rect width="119" height="44" rx="6" fill="#007d75"/>
+                            <text x="12" y="30" fill="white" font-size="16" font-family="Futura PT" font-weight="600">NATURAL</text>
+                            <text x="72" y="30" fill="white" font-size="10" font-family="Futura PT">HEALTH</text>
+                        </svg>
+                    </a>
+                </div>
+                <a href="/catalog/" class="header__catalog-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="1" y="1" width="5.6" height="5.6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="9.4" y="1" width="5.6" height="5.6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="1" y="9.4" width="5.6" height="5.6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="9.4" y="9.4" width="5.6" height="5.6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Каталог
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="/delivery/">Доставка</a></li>
+                        <li><a href="/about/" class="header__nav-list--active">О компании</a></li>
+                        <li><a href="/reviews/">Отзывы</a></li>
+                        <li><a href="/dealer/">Станьте дилером</a></li>
+                        <li><a href="/press/">Пресс-центр</a></li>
+                        <li><a href="/contacts/">Контакты</a></li>
+                    </ul>
+                </nav>
+                <a href="/sale/" class="header__sale">Акции</a>
+                <div class="header__actions">
+                    <a href="tel:+78001015923" class="header__phone" aria-label="Позвонить">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </a>
+                    <a href="/search/" class="header__search-link" aria-label="Поиск">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="/personal/cart/" class="header__cart" aria-label="Корзина">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M3 6h18" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span class="header__cart-count">0</span>
+                    </a>
+                </div>
+                <button class="header__burger" onclick="mobileMenuOpen()" aria-label="Меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-main">
+
+        <section class="about-hero">
+            <div class="container">
+                <div class="swiper about-hero__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide about-hero__slide">
+                            <div class="about-hero__slide-bg" style="background-image: url('images/slide-1.jpg')">     
+                                <ul class="about-hero__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <a href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                                        <meta itemprop="position" content="1" />
+                                    </li>
+                                    <li class="about-hero__breadcrumbs-sep">•</li>
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <span itemprop="name">О компании</span>
+                                        <meta itemprop="position" content="2" />
+                                    </li>
+                                </ul>
+                                <h1 class="about-hero__title">То, что проходит сквозь годы, становится символом надежности</h1>
+                            
+                            </div>
+                        </div>
+                        <div class="swiper-slide about-hero__slide">
+                            <div class="about-hero__slide-bg" style="background-image: url('images/slide-2.jpg')">
+                                <ul class="about-hero__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <a href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                                        <meta itemprop="position" content="1" />
+                                    </li>
+                                    <li class="about-hero__breadcrumbs-sep">•</li>
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <span itemprop="name">О компании</span>
+                                        <meta itemprop="position" content="2" />
+                                    </li>
+                                </ul>
+                                <h1 class="about-hero__title">Мы объединяем природные компоненты в&nbsp;формулы, где каждый элемент усиливает действие другого</h1>
+                            </div>
+                        </div>
+                        <div class="swiper-slide about-hero__slide">
+                            <div class="about-hero__slide-bg" style="background-image: url('images/slide-3.jpg')">
+                                <ul class="about-hero__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <a href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                                        <meta itemprop="position" content="1" />
+                                    </li>
+                                    <li class="about-hero__breadcrumbs-sep">•</li>
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <span itemprop="name">О компании</span>
+                                        <meta itemprop="position" content="2" />
+                                    </li>
+                                </ul>
+                                <h1 class="about-hero__title">Наша задача&nbsp;— не&nbsp;замаскировать проблему, а помочь телу восстановить баланс изнутри</h1>
+                            </div>
+                        </div>
+                        <div class="swiper-slide about-hero__slide">
+                            <div class="about-hero__slide-bg" style="background-image: url('images/slide-4.jpg')">
+                                <ul class="about-hero__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <a href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                                        <meta itemprop="position" content="1" />
+                                    </li>
+                                    <li class="about-hero__breadcrumbs-sep">•</li>
+                                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                        <span itemprop="name">О компании</span>
+                                        <meta itemprop="position" content="2" />
+                                    </li>
+                                </ul>
+                                <h1 class="about-hero__title">Более 300&nbsp;000 клиентов по всему миру доверяют нам, потому что мы отвечаем за каждую капсулу</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-hero__controls">
+                        <button class="about-hero__arrow about-hero__prev" aria-label="Предыдущий">
+                            <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.146446 3.32845C-0.0488148 3.52372 -0.0488148 3.8403 0.146446 4.03556L3.32843 7.21754C3.52369 7.4128 3.84027 7.4128 4.03553 7.21754C4.2308 7.02228 4.2308 6.7057 4.03553 6.51043L1.20711 3.68201L4.03553 0.85358C4.2308 0.658318 4.2308 0.341735 4.03553 0.146473C3.84027 -0.0487893 3.52369 -0.0487893 3.32843 0.146473L0.146446 3.32845ZM20.5 3.68201V3.18201H0.5V3.68201V4.18201H20.5V3.68201Z"
+                                    fill="#1C1C1C" />
+                            </svg>
+
+                        </button>
+                        <span class="about-hero__counter">
+                            <span class="about-hero__counter-current">01</span> 
+                            / 04
+                        </span>
+                        <button class="about-hero__arrow about-hero__next" aria-label="Следующий">
+                            <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3536 3.32845C20.5488 3.52372 20.5488 3.8403 20.3536 4.03556L17.1716 7.21754C16.9763 7.4128 16.6597 7.4128 16.4645 7.21754C16.2692 7.02228 16.2692 6.7057 16.4645 6.51043L19.2929 3.68201L16.4645 0.85358C16.2692 0.658318 16.2692 0.341735 16.4645 0.146473C16.6597 -0.0487893 16.9763 -0.0487893 17.1716 0.146473L20.3536 3.32845ZM0 3.68201L0 3.18201H20V3.68201V4.18201H0L0 3.68201Z"
+                                    fill="#1C1C1C" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <section class="about-mission">
+            <div class="container">
+                <div class="about-mission__inner">
+                    <p class="about-mission__overline">Natural Health Corporation</p>
+                    <h2 class="about-mission__heading">Миссия</h2>
+                    <p class="about-mission__title">Ваше качество жизни — наша забота.<br>Осознанно. Натурально. Безопасно.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-values">
+            <div class="container">
+                <h2 class="section-title">Ценности</h2>
+                <div class="about-values__grid">
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">Ч</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Человек</h3>
+                            <p class="about-values__card-text">гармоничное развитие разума, души и тела</p>
+                        </div>
+                    </div>
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">Е</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Единство</h3>
+                            <p class="about-values__card-text">открытое партнерство с собой, окружающими людьми и природой</p>
+                        </div>
+                    </div>
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">С</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Созидание</h3>
+                            <p class="about-values__card-text">стремление создавать полезное</p>
+                        </div>
+                    </div>
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">Т</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Толерантность</h3>
+                            <p class="about-values__card-text">принятие разностей</p>
+                        </div>
+                    </div>
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">Н</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Новаторство</h3>
+                            <p class="about-values__card-text">открытие новых возможностей</p>
+                        </div>
+                    </div>
+                    <div class="about-values__card">
+                        <span class="about-values__card-letter">О</span>
+                        <div class="about-values__card-body">
+                            <h3 class="about-values__card-title">Ответственность</h3>
+                            <p class="about-values__card-text">готовность отвечать за результат и действия</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-stats">
+            <div class="container">
+                <div class="about-stats__header">
+                    <p class="about-stats__overline">Natural Health Corporation</p>
+                    <h2 class="about-stats__title">Мы в цифрах</h2>
+                </div>
+                <div class="about-stats__grid">
+                    <div class="about-stats__card">
+                        <div class="about-stats__card-bg" style="background-image: url('images/stat-1.jpg')"></div>
+                        <div class="about-stats__card-content">
+                            <span class="about-stats__number">8</span>
+                            <span class="about-stats__label">лет на рынке</span>
+                            <span class="about-stats__desc">Опыт, которому можно верить.</span>
+                        </div>
+                    </div>
+                    <div class="about-stats__card about-stats__card--light">
+                        <div class="about-stats__card-bg" style="background-image: url('images/stat-2.jpg')"></div>
+                        <div class="about-stats__card-content">
+                            <span class="about-stats__number">90+</span>
+                            <span class="about-stats__label">продуктов</span>
+                            <span class="about-stats__desc">Всё для здоровья и красоты в одном месте.</span>
+                        </div>
+                    </div>
+                    <div class="about-stats__card">
+                        <div class="about-stats__card-bg" style="background-image: url('images/stat-3.jpg')"></div>
+                        <div class="about-stats__card-content">
+                            <span class="about-stats__number">11</span>
+                            <span class="about-stats__label">стран</span>
+                            <span class="about-stats__desc">В которые экспортируется наша продукция</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-cta">
+            <div class="container">
+                <div class="about-cta__inner">
+                    <div class="about-cta__content">
+                        <p class="about-cta__overline">Здоровье требует комплексного подхода</p>
+                        <h2 class="about-cta__title">
+                            Наши линейки продуктов представляют собой готовые решения, 
+                            где все компоненты взаимодополняют друг друга для <span>воздействия на ключевые органы и системы организма.</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-features">
+            <div class="container">
+                <div class="about-features__header">
+                    <p class="about-features__overline">Natural Health Corporation</p>
+                    <h2 class="about-features__title">Наши линейки продукции</h2>
+                </div>
+                <div class="about-features__list">
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-1.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Спортивное питание</h3>
+                            <p class="about-features__card-desc">(в том числе и гели-стики), которое помогает эффективно привести тело в
+                                форму и способствует быстрому восстановлению после нагрузок, оставаясь при этом на 100% натуральным.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-2.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Шипучие формы</h3>
+                            <p class="about-features__card-desc">— быстрорастворимые витаминные коктейли с насыщенным вкусом, созданные для тех, кто ценит комфорт и мгновенный результат, позволяя восполнить баланс жидкости и необходимых макро- и микроэлементов за несколько секунд;</p>
+                        </div>
+                    </div>
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-3.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Масла и жирные кислоты</h3>
+                            <p class="about-features__card-desc">отобранные с максимальной тщательностью для поддержки работы мозга, сосудов и гормональной системы на самом высоком уровне;</p>
+                        </div>
+                    </div>
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-4.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Детские витамины-мармеладки</h3>
+                            <p class="about-features__card-desc">— вкусный и полезный перекус, который превращает заботу о здоровье в удовольствие: созданные на натуральной основе, они мягко укрепляют иммунитет, помогают в учёбе и активных играх и закладывают здоровые привычки с детства;</p>
+                        </div>
+                    </div>
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-5.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Жидкие БАДы</h3>
+                            <p class="about-features__card-desc">с витаминами группы В и СО2-экстрактами растений, уникальная жидкая форма которых обеспечивает 98% усвояемости, позволяя полезным веществам целенаправленно воздействовать на органы и ткани;</p>
+                        </div>
+                    </div>
+                    <div class="about-features__card">
+                        <div class="about-features__card-img" style="background-image: url('images/feature-6.jpg')"></div>
+                        <div class="about-features__card-body">
+                            <h3 class="about-features__card-title">Пищевые добавки и БАДы</h3>
+                            <p class="about-features__card-desc">представляющие собой концентрированную пользу растений, витаминов и минералов. Они служат основой для восполнения дефицитов и мягкого очищения организма, создавая прочную базу для его слаженной работы;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-history">
+            <div class="container">
+                <h2 class="section-title">История компании</h2>
+                <div class="about-history__wrapper">
+                    <div class="about-history__grid">
+                        <div class="about-history__card">
+                            <div class="about-history__year">2017</div>
+                            <p class="about-history__text">Создание компании «Натуральное здоровье» и бренда Natural Health.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2018</div>
+                            <p class="about-history__text">Запуск жидких БАДов с высокой усвояемостью и максимально натуральным составом.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2019</div>
+                            <p class="about-history__text">Расширение ассортимента: компания выпускает первые капсулированные комплексы и анатомическую продукцию.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2020</div>
+                            <p class="about-history__text">Открытие собственной производственной площадки компании. В церемонии принял участие Президент Республики Татарстан, что подтвердило значимость проекта для региона.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2021</div>
+                            <p class="about-history__text">Выход на международный уровень: бренд принял участие в XII экономическом саммите «Россия — Исламский мир: KazanSummit 2021».</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2022</div>
+                            <p class="about-history__text">Компания вошла в число ключевых участников регионального стенда Республики Татарстан на юбилейном XXV Петербургском международном экономическом форуме и получила статус одного из лидеров отрасли.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2023</div>
+                            <p class="about-history__text">Генеральный директор компании Патраков С.А. подписывает партнёрское соглашение с одним из ведущих торговых холдингов Туркменистана. Расширение продуктовой линейки.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2024</div>
+                            <p class="about-history__text">Продукция Natural Health вышла на рынок Узбекистана — теперь она представлена в крупнейшем маркетплейсе страны Uzum Market и во всех аптечных сетях Ташкента.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2025</div>
+                            <p class="about-history__text">Выход компании на рынок Казахстана. Расширение ассортимента капсулированных БАДов, запуск спортивных добавок, обновление и улучшение линейки жидких БАДов.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year">2026</div>
+                            <p class="about-history__text">Компания выпускает новые линейки: детские витамины, функциональные гели, шипучие таблетки, мягкие желатиновые капсулы. Запуск сети франшизных точек.</p>
+                        </div>
+                        <div class="about-history__card">
+                            <div class="about-history__year about-history__year--current">2027</div>
+                            <p class="about-history__text">Продолжение следует...</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-advantages">
+            <div class="container">
+                <div class="about-advantages__inner">
+                    <div class="about-advantages__image" style="background-image: url('images/advantages-1.jpg')"></div>
+                    <div class="about-advantages__content">
+                        <div class="about-advantages__top">
+                            <p class="about-advantages__overline">Собственное производство</p>
+                            <h2 class="about-advantages__title">Гарантия контроля и&nbsp;качества от&nbsp;источника до&nbsp;потребителя</h2>
+                        </div>
+                        <div class="about-advantages__list">
+                            <div class="about-advantages__item about-advantages__item--active" data-image="images/advantages.jpg" data-overline="Собственное производство" data-title="Гарантия контроля и&nbsp;качества от&nbsp;источника до&nbsp;потребителя">
+                                <div class="about-advantages__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span class="about-advantages__item-text">Собственное производство</span>
+                            </div>
+                            <div class="about-advantages__item" data-image="images/advantages.jpg" data-overline="Уникальные инновации" data-title="Передовые разработки и&nbsp;уникальные формулы для&nbsp;вашего здоровья">
+                                <div class="about-advantages__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span class="about-advantages__item-text">Уникальные инновации</span>
+                            </div>
+                            <div class="about-advantages__item" data-image="images/advantages.jpg" data-overline="Фокус на результате" data-title="Максимальная эффективность и&nbsp;научный подход к&nbsp;здоровью">
+                                <div class="about-advantages__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span class="about-advantages__item-text">Фокус на результате</span>
+                            </div>
+                            <div class="about-advantages__item" data-image="images/advantages.jpg" data-overline="Госрегистрация и&nbsp;Халяль" data-title="Официальная регистрация и&nbsp;сертификация Халяль">
+                                <div class="about-advantages__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span class="about-advantages__item-text">Государственная регистрация и&nbsp;сертификация Халяль</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-support">
+            <div class="container">
+                <div class="about-support__inner">
+                    <div class="about-support__bg" style="background-image: url('images/support-bg.jpg')"></div>
+                    <div class="about-support__decor"></div>
+                    <div class="about-support__content">
+                        <p class="about-support__overline">всегда на связи</p>
+                        <h2 class="about-support__title">Поддержка клиентов 24/7</h2>
+                        <p class="about-support__desc">Наш менеджер ответит на любой ваш вопрос и&nbsp;поможет составить персональный план здоровья</p>
+                        <a href="https://t.me/tdzdorovie_bot" class="about-support__btn">Написать в бот в MAX</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-reviews" >
+            <div class="container">
+                <div class="about-reviews__hero">
+                    <div class="about-reviews__hero-bg" style="background-image: url('images/reviews-hero.jpg')"></div>
+                    <div class="about-reviews__hero-content">
+                        <div class="about-reviews__hero-inner">
+                            <h2 class="about-reviews__hero-title">Партнерство со спортивными мероприятиями города — наш вклад в&nbsp;культуру здоровья.</h2>
+                            <p class="about-reviews__hero-desc">Именно поэтому Natural Health уже много лет выступает партнером крупнейших спортивных событий города.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-reviews__cta-section">
+            <div class="container">
+                <div class="about-reviews__cta" style="background-image: url('images/bg-review.svg')">
+                    <div class="about-reviews__cta-content">
+                        <h3 class="about-reviews__cta-title">Хотите быть с нами в&nbsp;одной команде? Присоединяйтесь к&nbsp;нашему сообществу!</h3>
+                        <p class="about-reviews__cta-desc">Там мы публикуем анонсы мероприятий, рекомендации по&nbsp;здоровому образу жизни и&nbsp;бесплатные тренировки.</p>
+                    </div>
+                    <div class="about-reviews__cta-mockup">
+                        <div class="about-reviews__cta-mockup-body" style="background-image: url('images/macbook.png')">
+                        </div>
+                    </div>
+                    <div class="about-reviews__cta-right">
+                        <div class="about-reviews__cta-action">
+                            <a href="" class="about-reviews__cta-btn">
+                                Присоединиться
+                                <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+                                    <path d="M28 2l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 10h30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-reviews__cta-section">
+            <div class="container">
+                <div class="about-reviews__section">
+                    <div class="about-reviews__section-header">
+                        <h2 class="section-title about-reviews__section-title">Истории наших клиентов</h2>
+                        <div class="about-reviews__section-actions">
+                            <a href="" class="btn-outline">Смотреть все</a>
+                            <a href="" class="btn-primary">Рассказать свою историю</a>
+                        </div>
+                    </div>
+                    <div class="about-reviews__cards">
+                        <div class="about-reviews__card">
+                            <div class="about-reviews__card-author">
+                                <div class="about-reviews__card-avatar">
+                                    <img src="images/avatar-miroslava.jpg" alt="Мирослава">
+                                </div>
+                                <div class="about-reviews__card-info">
+                                    <span class="about-reviews__card-name">Мирослава</span>
+                                    <span class="about-reviews__card-location">28 лет, Казань</span>
+                                </div>
+                            </div>
+                            <p class="about-reviews__card-text">Нашла я его случайным образом, когда задумалась о&nbsp;комплексном подходе к&nbsp;оздоровлению (вместо того чтобы лечить каждый орган по&nbsp;отдельности), и&nbsp;с тех пор это не&nbsp;просто БАДы, а&nbsp;настоящая система: очищение, затем витамины и&nbsp;минералы, потом курс L-карнитина, всё по&nbsp;рекомендации менеджера.</p>
+                        </div>
+                        <div class="about-reviews__card">
+                            <div class="about-reviews__card-author">
+                                <div class="about-reviews__card-avatar">
+                                    <img src="images/avatar-elizaveta.jpg" alt="Елизавета">
+                                </div>
+                                <div class="about-reviews__card-info">
+                                    <span class="about-reviews__card-name">Елизавета</span>
+                                    <span class="about-reviews__card-location">33 года, Москва</span>
+                                </div>
+                            </div>
+                            <p class="about-reviews__card-text">Взяла эти капли по&nbsp;совету подруги после того, как перепробовала кучу всего от&nbsp;усталости и&nbsp;авитаминоза, и&nbsp;разница колоссальная — уже через 10 дней почувствовала прилив энергии, улучшилось настроение, перестали выпадать волосы и&nbsp;слоиться ногти, а&nbsp;главное — ушла та самая «разбитость» по&nbsp;утрам, с&nbsp;которой жила последние пару лет.</p>
+                        </div>
+                        <div class="about-reviews__card">
+                            <div class="about-reviews__card-author">
+                                <div class="about-reviews__card-avatar">
+                                    <img src="images/avatar-mariya.jpg" alt="Мария">
+                                </div>
+                                <div class="about-reviews__card-info">
+                                    <span class="about-reviews__card-name">Мария</span>
+                                    <span class="about-reviews__card-location">27 лет, Казань</span>
+                                </div>
+                            </div>
+                            <p class="about-reviews__card-text">Нашла я его случайным образом, когда задумалась о&nbsp;комплексном подходе к&nbsp;оздоровлению (вместо того чтобы лечить каждый орган по&nbsp;отдельности), и&nbsp;с тех пор это не&nbsp;просто БАДы, а&nbsp;настоящая система: очищение, затем витамины и&nbsp;минералы, потом курс L-карнитина, всё по&nbsp;рекомендации менеджера.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-press-section">
+            <div class="container">
+                <div class="about-press">
+                    <div class="about-press__header">
+                        <h2 class="section-title about-press__title">Пресс-центр</h2>
+                        <a href="" class="btn-outline">Смотреть все</a>
+                    </div>
+                    <div class="about-press__grid">
+                        <article class="about-press__card">
+                            <div class="about-press__card-img" style="background-image: url('images/news-1.jpg')"></div>
+                            <span class="about-press__card-date">20 июня</span>
+                            <h3 class="about-press__card-title">Natural Health — генеральный партнёр «Ночной Казани 2022».</h3>
+                            <p class="about-press__card-desc">16 июля прошел забег «Ночная Казань». Natural Health выступила генеральным партнёром мероприятия.</p>
+                        </article>
+                        <article class="about-press__card">
+                            <div class="about-press__card-img" style="background-image: url('images/news-2.jpg')"></div>
+                            <span class="about-press__card-date">11 июня</span>
+                            <h3 class="about-press__card-title">23 июля состоится пятилетие Natural Health</h3>
+                            <p class="about-press__card-desc">23 июля состоится грандиозное событие — празднование 5-летия компании. Путь с 2017 года.</p>
+                        </article>
+                        <article class="about-press__card">
+                            <div class="about-press__card-img" style="background-image: url('images/news-3.jpg')"></div>
+                            <span class="about-press__card-date">02 июня</span>
+                            <h3 class="about-press__card-title">Панельная дискуссия «Поиск новых возможностей и&nbsp;трансформация компаний»</h3>
+                            <p class="about-press__card-desc">С 3 по 4 июня прошла панельная дискуссия на тему трансформации компаний.</p>
+                        </article>
+                        <article class="about-press__card">
+                            <div class="about-press__card-img" style="background-image: url('images/news-1.jpg')"></div>
+                            <span class="about-press__card-date">20 июня</span>
+                            <h3 class="about-press__card-title">Natural Health — генеральный партнёр «Ночной Казани 2022».</h3>
+                            <p class="about-press__card-desc">16 июля прошел забег «Ночная Казань». Natural Health выступила генеральным партнёром мероприятия.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+             
+        <div class="footer__inner">
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__col footer__col--brand">
+                        <div class="footer__logo">
+                            <svg width="157" height="58" viewBox="0 0 157 58" fill="none">
+                                <rect width="157" height="58" rx="8" fill="#1c1c1c" opacity="0.3"/>
+                                <text x="16" y="36" fill="white" font-size="18" font-family="Futura PT" font-weight="600">NATURAL</text>
+                                <text x="96" y="36" fill="white" font-size="12" font-family="Futura PT">HEALTH</text>
+                            </svg>
+                        </div>
+                        <div class="footer__company">ООО «НАТУРАЛЬНОЕ ЗДОРОВЬЕ»</div>
+                        <div class="footer__address">420021, Российская Федерация,<br>Республика Татарстан, г. Казань,<br>ул. Сары Садыковой, 37</div>
+                        <div class="footer__legal">
+                            <span>ИНН 1831193547</span>
+                            <span>ОГРН 1191832005595</span>
+                        </div>
+                        <div class="footer__copyright">© 2017–2022 Все права защищены</div>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Каталог</h4>
+                        <ul>
+                            <li><a href="">Категория 1</a></li>
+                            <li><a href="">Категория 2</a></li>
+                            <li><a href="">Категория 3</a></li>
+                            <li><a href="">Категория 4</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Покупателям</h4>
+                        <ul>
+                            <li><a href="">О компании</a></li>
+                            <li><a href="">Доставка и оплата</a></li>
+                            <li><a href="">Отзывы</a></li>
+                            <li><a href="">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Партнерам</h4>
+                        <ul>
+                            <li><a href="">Стать дилером</a></li>
+                            <li><a href="">Пресс-центр</a></li>
+                            <li><a href="">Оптовые поставки</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col footer__col--contacts">
+                        <a href="tel:+78001015923" class="footer__phone">8 800 101 59 23</a>
+                        <span class="footer__phone-desc">Звонок по России бесплатный</span>
+                        <a href="mailto:info@tdzdorovie.ru" class="footer__email">info@tdzdorovie.ru</a>
+                        <div class="footer__social">
+                            <a href="https://vk.com/tdzdorovie" target="_blank" aria-label="VK">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.47 17.82h1.15s.35-.04.53-.26c.16-.2.16-.57.16-.57s-.02-1.74.78-2c.79-.26 1.8 1.69 2.87 2.43.41.29.72.23.72.23l2.87-.04s1.5-.09.79-1.27c-.06-.1-.42-.88-2.16-2.49-1.82-1.69-1.58-1.41.62-4.33 1.34-1.78 1.88-2.87 1.71-3.34-.16-.44-1.14-.32-1.14-.32h-3.26s-.24-.04-.42.07c-.18.12-.29.4-.29.4s-.54 1.44-1.26 2.67c-1.52 2.6-2.13 2.74-2.38 2.58-.58-.36-.43-1.46-.43-2.24 0-2.44.37-3.46-.72-3.72-.36-.09-.63-.15-1.56-.16-1.19-.01-2.2.01-2.77.28-.38.18-.67.6-.49.62.22.02.72.13.98.49.34.46.33 1.5.33 1.5s.2 2.86-.46 3.21c-.46.24-1.08-.25-2.42-2.53-.69-1.17-1.2-2.47-1.2-2.47s-.1-.25-.28-.38c-.22-.16-.53-.21-.53-.21H5.89s-.5.02-.7.23c-.17.2-.01.6-.01.6s2.5 5.84 5.33 8.78c2.6 2.7 5.55 2.53 5.55 2.53z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/tdzdorovie_bot" target="_blank" aria-label="Telegram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.062 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <span>Правовая информация</span>
+                    <span>Сайт разработан</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/about.js"></script>
+</body>
+
+</html>

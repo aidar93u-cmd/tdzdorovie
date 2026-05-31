@@ -1,0 +1,12 @@
+# Figma exports
+hero-figma.png
+info-title-figma.png
+images/franchise/figma-mobile-*.png
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# opencode
+opencode.json

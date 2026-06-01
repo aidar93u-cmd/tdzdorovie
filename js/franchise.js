@@ -191,37 +191,28 @@ function initFranchiseCardsAnimation() {
 	var cards = gsap.utils.toArray('.franchise-catalog__card');
 	if (cards.length === 0) return;
 
-	var containerW = container.offsetWidth;
-	gsap.set(container, { position: 'relative', width: containerW });
-	gsap.set(cards, { position: 'absolute', top: 0, left: 0, width: '100%', margin: 0, transformOrigin: 'top left' });
-
-	var maxH = 0;
-	cards.forEach(function(card, i) {
-		var h = card.offsetHeight;
-		if (h > maxH) maxH = h;
-		gsap.set(card, {
-			transform: 'translate(0px, ' + (-10 * i) + 'px) scale(' + Math.pow(0.9, i) + ', ' + Math.pow(0.9, i) + ')'
-		});
-	});
-
-	container.style.minHeight = (200 + (cards.length - 1) * 50 + maxH) + 'px';
+	var totalH = 0;
+	cards.forEach(function(c) { totalH += c.offsetHeight; });
 
 	var tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: container,
 			start: 'top top',
 			end: '+=' + (window.innerHeight * 3),
-			pin: container,
+			pin: true,
 			scrub: 1.5,
-			invalidateOnRefresh: true,
-			anticipatePin: 1
+			invalidateOnRefresh: true
 		}
 	});
 
 	cards.forEach(function(card, i) {
+		var targetY = (200 + i * 50) - card.offsetTop;
+		var targetScale = Math.pow(0.9, i);
+
 		tl.to(card, {
-			transform: 'translate(0px, 0px) scale(1, 1)',
-			top: (200 + i * 50) + 'px',
+			y: targetY,
+			scale: targetScale,
+			transformOrigin: '0% 0%',
 			duration: 0.8,
 			ease: 'power1.out'
 		}, i * 0.3);

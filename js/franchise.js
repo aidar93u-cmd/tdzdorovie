@@ -90,6 +90,9 @@ initAOS();
 /* ---- GSAP Cards Animation ---- */
 
 function initFranchiseCardsAnimation() {
+	if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+		gsap.registerPlugin(ScrollTrigger);
+	}
 	var container = document.querySelector('.franchise-catalog__list');
 	if (!container) return;
 

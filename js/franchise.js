@@ -76,16 +76,18 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ---- AOS ---- */
 
 function initAOS() {
-	if (typeof AOS === 'undefined') return;
+	if (typeof AOS === 'undefined') return
+
 	AOS.init({
 		duration: 400,
 		easing: 'ease-in-out',
 		offset: 0,
 		once: true,
-	});
+	})
 }
 
-initAOS();
+document.addEventListener('DOMContentLoaded', initAOS)
+window.addEventListener('load', function() { if (typeof AOS !== 'undefined') AOS.refresh() })
 
 /* ---- GSAP Cards Animation ---- */
 

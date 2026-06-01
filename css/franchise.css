@@ -1463,7 +1463,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		line-height: 70%;
 		letter-spacing: -0.02em;
 	}
-
+	.franchise-features__stat-prefix,
 	.franchise-features__stat-unit {
 		font-size: 2.2rem;
 		line-height: 97%;
@@ -2212,7 +2212,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-stats {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
         margin-top: 0;
 	}
 
@@ -2226,10 +2226,16 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		color: var(--black-color);
 		margin-bottom: 4rem;
 	}
-
+	.franchise-cta__inner {
+        border-radius: 1rem;
+  }
 	.franchise-stats .franchise-features__col-content {
 		padding: 3rem;
 	}
+	.franchise-cta {
+        margin-bottom: 6rem;
+  }
+	
 }
 
 /* ===== Page CTA ===== */
@@ -2570,6 +2576,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 @media only screen and (max-width: 768px) {
 	.franchise-cta-info {
 		margin-bottom: 8rem;
+		display: none;
 	}
 
 	.franchise-cta-info__inner {
@@ -2595,6 +2602,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		flex-direction: column;
 		gap: 0;
 		padding: 0;
+        border-radius: 1rem;
 	}
 
 	.franchise-cta__form {
@@ -2610,7 +2618,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-cta {
-		margin-bottom: 8rem;
+		margin-bottom: 2rem;
 	}
 
 	.franchise-cta__content {
@@ -2633,4 +2641,9 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
         margin-bottom: 26rem;
         border-radius: 1rem;
     }
+		
+	.franchise-cta__checklist-item,
+	.franchise-cta__desc {
+			font-size: 2rem;
+	}
 }

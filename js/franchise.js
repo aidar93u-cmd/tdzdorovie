@@ -71,6 +71,96 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (group) {
                     group.querySelectorAll('.franchise-calc__radio').forEach(function(lbl) {
                         lbl.classList.remove('franchise-calc__radio--active');
+                    });
+                }
+                var label = this.closest('.franchise-calc__radio');
+                if (label) label.classList.add('franchise-calc__radio--active');
+            }
+            calculate();
+        });
+    });
+
+    document.querySelectorAll('.franchise-calc__range').forEach(function(input) {
+        input.addEventListener('input', calculate);
+    });
+
+    var btn = document.querySelector('.franchise-calc__result-btn');
+    
+
+    calculate();
+
+    /* ---- Form Mask & Validation ---- */
+
+    var phoneInput = document.querySelector('input[name="phone"]');
+    var phoneMask = null;
+    if (phoneInput && typeof IMask !== 'undefined') {
+        phoneMask = IMask(phoneInput, {
+            mask: '+{7} (000) 000-00-00'
+        });
+    }
+
+    var form = document.getElementById('cta-form');
+    if (form && typeof validate !== 'undefined') {
+        var constraints = {
+            name: { presence: { message: 'Введите имя' } },
+            phone: {
+                presence: { message: 'Введите телефон' },
+                format: {
+                    pattern: '\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}',
+                    message: 'Номер заполнен не полностью'
+                }
+            },
+            email: {
+                presence: { message: 'Введите email' },
+                email: { message: 'Некорректный email' }
+            },
+            consent: { presence: { message: 'Подтвердите согласие' } }
+        };
+
+        function clearErrors() {
+            form.querySelectorAll('.franchise-cta__error').forEach(function(el) {
+                el.textContent = '';
+            });
+            form.querySelectorAll('.franchise-cta__field').forEach(function(el) {
+                el.classList.remove('franchise-cta__field--error');
+            });
+        }
+
+        function showErrors(errors) {
+            clearErrors();
+            Object.keys(errors).forEach(function(field) {
+                var errEl = form.querySelector('[data-error="' + field + '"]');
+                var fieldEl = form.querySelector('[name="' + field + '"]');
+                if (errEl) errEl.textContent = errors[field][0];
+                if (fieldEl) {
+                    var wrapper = fieldEl.closest('.franchise-cta__field');
+                    if (wrapper) wrapper.classList.add('franchise-cta__field--error');
+                }
+            });
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            var formValues = {
+                name: form.querySelector('[name="name"]').value.trim(),
+                phone: phoneMask ? phoneMask.unmaskedValue : form.querySelector('[name="phone"]').value,
+                email: form.querySelector('[name="email"]').value.trim(),
+                consent: form.querySelector('[name="consent"]').checked ? 'yes' : undefined
+            };
+
+            var errors = validate(formValues, constraints);
+            if (errors) {
+                showErrors(errors);
+                return;
+            }
+
+            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+            if (phoneMask) phoneMask.value = '';
+        });
+    }
 });
 
 /* ---- AOS ---- */
@@ -174,93 +264,3 @@ if (document.readyState === 'loading') {
 } else {
 	setupFranchiseAnimation();
 }
-                }
-                var label = this.closest('.franchise-calc__radio');
-                if (label) label.classList.add('franchise-calc__radio--active');
-            }
-            calculate();
-        });
-    });
-
-    document.querySelectorAll('.franchise-calc__range').forEach(function(input) {
-        input.addEventListener('input', calculate);
-    });
-
-    var btn = document.querySelector('.franchise-calc__result-btn');
-   
-
-    calculate();
-
-    /* ---- Form Mask & Validation ---- */
-
-    var phoneInput = document.querySelector('input[name="phone"]');
-    var phoneMask = null;
-    if (phoneInput && typeof IMask !== 'undefined') {
-        phoneMask = IMask(phoneInput, {
-            mask: '+{7} (000) 000-00-00'
-        });
-    }
-
-    var form = document.getElementById('cta-form');
-    if (form && typeof validate !== 'undefined') {
-        var constraints = {
-            name: { presence: { message: 'Введите имя' } },
-            phone: {
-                presence: { message: 'Введите телефон' },
-                format: {
-                    pattern: '\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}',
-                    message: 'Номер заполнен не полностью'
-                }
-            },
-            email: {
-                presence: { message: 'Введите email' },
-                email: { message: 'Некорректный email' }
-            },
-            consent: { presence: { message: 'Подтвердите согласие' } }
-        };
-
-        function clearErrors() {
-            form.querySelectorAll('.franchise-cta__error').forEach(function(el) {
-                el.textContent = '';
-            });
-            form.querySelectorAll('.franchise-cta__field').forEach(function(el) {
-                el.classList.remove('franchise-cta__field--error');
-            });
-        }
-
-        function showErrors(errors) {
-            clearErrors();
-            Object.keys(errors).forEach(function(field) {
-                var errEl = form.querySelector('[data-error="' + field + '"]');
-                var fieldEl = form.querySelector('[name="' + field + '"]');
-                if (errEl) errEl.textContent = errors[field][0];
-                if (fieldEl) {
-                    var wrapper = fieldEl.closest('.franchise-cta__field');
-                    if (wrapper) wrapper.classList.add('franchise-cta__field--error');
-                }
-            });
-        }
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            clearErrors();
-
-            var formValues = {
-                name: form.querySelector('[name="name"]').value.trim(),
-                phone: phoneMask ? phoneMask.unmaskedValue : form.querySelector('[name="phone"]').value,
-                email: form.querySelector('[name="email"]').value.trim(),
-                consent: form.querySelector('[name="consent"]').checked ? 'yes' : undefined
-            };
-
-            var errors = validate(formValues, constraints);
-            if (errors) {
-                showErrors(errors);
-                return;
-            }
-
-            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-            form.reset();
-            if (phoneMask) phoneMask.value = '';
-        });
-    }
-});

@@ -73,6 +73,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         lbl.classList.remove('franchise-calc__radio--active');
 });
 
+/* ---- AOS ---- */
+
+function initAOS() {
+	if (typeof AOS === 'undefined') return;
+	AOS.init({
+		duration: 400,
+		easing: 'ease-in-out',
+		offset: 0,
+		once: true,
+	});
+}
+
+initAOS();
+
 /* ---- GSAP Cards Animation ---- */
 
 function initFranchiseCardsAnimation() {

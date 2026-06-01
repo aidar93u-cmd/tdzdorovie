@@ -1033,7 +1033,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-hero__inner {
-		padding: 4rem 3rem;
+		padding: 3rem 2rem 6rem;
 		min-height: auto;
 		justify-content: flex-end;
 	}
@@ -1042,6 +1042,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		font: var(--text-t2);
 		margin-bottom: 4rem;
 		max-width: 100%;
+        margin-bottom: 6.5rem;
 	}
 
 	.franchise-hero__actions {
@@ -1057,7 +1058,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		flex-direction: column;
 		align-items: center;
 		gap: 4rem;
-		margin: 3.2rem 0 8rem;
+		margin: 3.2rem 0 5rem;
 	}
 
 	.franchise-hero__stats--mobile .franchise-hero__stat {
@@ -1069,7 +1070,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 	}
 
 	.franchise-hero__stats--mobile .franchise-hero__stat-num {
-		line-height: 97%;
+		line-height: 80%;
 	}
 	.franchise-hero {
 			margin: 0 0 0rem;
@@ -1222,11 +1223,13 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-info {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
 	}
 
 	.franchise-info__title {
 		margin-bottom: 3rem;
+        font-size: 3rem;
+        max-width: 90%;
 	}
 
 	.franchise-info__grid {
@@ -1241,17 +1244,37 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 	}
 
 	.franchise-info__card {
-		padding: 3rem;
-		min-height: 24rem;
+		padding: 2.4rem;
+		min-height: 21.7rem;
+		border-radius: 1rem;
 	}
-
+	.franchise-info__card-desc {
+			max-width: 75%;
+			font-size: 18px;
+	}
+	.franchise-info__card--image1 .franchise-info__card-desc {
+			max-width: 50%;
+	}
+	
+	.franchise-info__card--image2 .franchise-info__card-desc {
+			max-width: 67%
+	}
 	.franchise-info__card-num {
-		font-size: 7rem;
+		font-size: 6rem;
 	}
-
+	.franchise-info__card-label {
+			font-size: 30px;
+	}
 	.franchise-info__card-icon-img {
 		width: 4.8rem;
 		height: 4.8rem;
+        margin-top: 2rem;
+	}
+	.franchise-info__card-desc {
+			font-size: 18px;
+	}
+	.franchise-hero__title {
+			font-size: 32px;
 	}
 }
 
@@ -1333,7 +1356,8 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 	color: var(--white-color);
 }
 
-.franchise-features__stat-unit {
+.franchise-features__stat-unit,
+.franchise-features__stat-prefix {
 	font-weight: 500;
 	font-size: 2.6rem;
 	line-height: 100%;
@@ -1372,7 +1396,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-features {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
 	}
 
 	.franchise-features__title {
@@ -1395,6 +1419,9 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 		min-height: auto;
 		height: 88.6rem;
         display: flex;
+	}
+	.franchise-stats .franchise-features__grid{    
+		height: 109.6rem;
 	}
 	.franchise-features__col-content {
 		padding: 2.4rem;
@@ -1428,7 +1455,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 	.franchise-features__stat-value {
 		gap: 0.5rem;
-		align-items: flex-end;
+    margin-bottom: 0.5rem;
 	}
 
 	.franchise-features__stat-num {
@@ -1563,7 +1590,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 @media only screen and (max-width: 768px) {
 	.franchise-catalog {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
 	}
 
 	.franchise-catalog__title {
@@ -1893,11 +1920,13 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 .franchise-calc__result-note {
 	font-size: 1.2rem;
 	opacity: 0.8;
+    line-height: 90%;
 }
 
 @media only screen and (max-width: 1024px) {
 	.franchise-calc__inner {
 		flex-direction: column;
+    gap: 1rem;
 	}
 
 	.franchise-calc__result {
@@ -1907,13 +1936,26 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 	.franchise-calc__form {
 		padding: 3rem;
 	}
+
 }
 
 @media only screen and (max-width: 768px) {
 	.franchise-calc {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
 	}
-
+	.franchise-calc__result-title {
+    font: var(--title-h3);
+    font-weight: 500;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+	}
+	.franchise-calc__result-desc {
+			opacity: 0.5;
+			font-size: 1.8rem;
+	}
+	.franchise-calc__result-top {
+			gap: 3.5rem;
+	}
 	.franchise-calc__form {
 		padding: 2.4rem;
 		gap: 3.2rem;
@@ -1922,6 +1964,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 	.franchise-calc__header {
 		gap: 2rem;
+    margin-bottom: 0;    
 	}
 
 	.franchise-calc__title {
@@ -2067,27 +2110,29 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 @media only screen and (max-width: 1024px) {
 	.franchise-steps__list {
 		grid-template-columns: 1fr;
-		gap: 4rem;
+		gap: 6rem;
 	}
 }
 
 @media only screen and (max-width: 768px) {
 	.franchise-steps {
-		margin-bottom: 8rem;
+		margin-bottom: 6rem;
 	}
 
 	.franchise-steps__header {
-		margin-bottom: 4rem;
+        margin-bottom: 5.5rem;
 	}
 
 	.franchise-steps__tag {
 		padding: 1rem 2rem;
 		font-size: 2.4rem;
 		line-height: 90%;
+        margin-bottom: 2.5rem;
 	}
 
 	.franchise-steps__title {
 		line-height: 90%;
+        font-size: 3rem;
 	}
 
 	.franchise-steps__item {
@@ -2140,6 +2185,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 
 	.franchise-steps__item-desc {
 		max-width: 100%;
+        font-size: 18px;
 	}
 }
 
@@ -2153,6 +2199,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 .franchise-stats .franchise-features__text,
 .franchise-stats .franchise-features__stat-num,
 .franchise-stats .franchise-features__stat-unit,
+.franchise-stats .franchise-features__stat-prefix,
 .franchise-stats .franchise-features__stat-desc,
 .franchise-stats .franchise-features__desc,
 .franchise-stats .franchise-features__title {

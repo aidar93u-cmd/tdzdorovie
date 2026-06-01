@@ -71,7 +71,90 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (group) {
                     group.querySelectorAll('.franchise-calc__radio').forEach(function(lbl) {
                         lbl.classList.remove('franchise-calc__radio--active');
-                    });
+});
+
+/* ---- GSAP Cards Animation ---- */
+
+function initFranchiseCardsAnimation() {
+	var container = document.querySelector('.franchise-catalog__list');
+	if (!container) return;
+
+	var cards = Array.from(container.querySelectorAll('.franchise-catalog__card'));
+	if (cards.length === 0) return;
+
+	var masterTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: container,
+			start: 'top 85%',
+			end: 'bottom 15%',
+			scrub: 1.5,
+			toggleActions: 'play none none reverse'
+		}
+	});
+
+	cards.forEach(function(card, index) {
+		var image = card.querySelector('.franchise-catalog__card-image');
+		var title = card.querySelector('.franchise-catalog__card-title');
+		var desc = card.querySelector('.franchise-catalog__card-desc');
+		var descSecond = card.querySelector('.franchise-catalog__card-desc--second');
+
+		gsap.set(card, { opacity: 0, y: 60, scale: 0.98 });
+		gsap.set(image, { scale: 1.05 });
+		gsap.set(title, { opacity: 0, y: 20 });
+		gsap.set(desc, { opacity: 0, y: 15 });
+		if (descSecond) gsap.set(descSecond, { opacity: 0, y: 15 });
+
+		masterTl.to(card, {
+			opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power2.out'
+		}, index * 0.25);
+
+		if (image) {
+			masterTl.fromTo(image,
+				{ scale: 1.05 },
+				{ scale: 1, duration: 0.9, ease: 'power1.out' },
+				index * 0.25 + 0.1
+			);
+		}
+
+		if (title) {
+			masterTl.to(title, {
+				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
+			}, index * 0.25 + 0.2);
+		}
+
+		if (desc) {
+			masterTl.to(desc, {
+				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
+			}, index * 0.25 + 0.35);
+		}
+
+		if (descSecond) {
+			masterTl.to(descSecond, {
+				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
+			}, index * 0.25 + 0.5);
+		}
+	});
+}
+
+function setupFranchiseAnimation() {
+	var isDesktop = window.matchMedia('(min-width: 1024px)');
+
+	function handleModeChange(e) {
+		ScrollTrigger.getAll().forEach(function(t) { t.kill(); });
+		if (e.matches && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+			initFranchiseCardsAnimation();
+		}
+	}
+
+	handleModeChange(isDesktop);
+	isDesktop.addEventListener('change', handleModeChange);
+}
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', setupFranchiseAnimation);
+} else {
+	setupFranchiseAnimation();
+}
                 }
                 var label = this.closest('.franchise-calc__radio');
                 if (label) label.classList.add('franchise-calc__radio--active');

@@ -182,66 +182,49 @@ window.addEventListener('load', function() { if (typeof AOS !== 'undefined') AOS
 /* ---- GSAP Cards Animation ---- */
 
 function initFranchiseCardsAnimation() {
-	if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-		gsap.registerPlugin(ScrollTrigger);
-	}
+	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+	gsap.registerPlugin(ScrollTrigger);
+
 	var container = document.querySelector('.franchise-catalog__list');
 	if (!container) return;
 
-	var cards = Array.from(container.querySelectorAll('.franchise-catalog__card'));
+	var cards = gsap.utils.toArray('.franchise-catalog__card');
 	if (cards.length === 0) return;
 
-	var masterTl = gsap.timeline({
+	var containerW = container.offsetWidth;
+	gsap.set(container, { position: 'relative', width: containerW });
+	gsap.set(cards, { position: 'absolute', top: 0, left: 0, width: '100%', margin: 0, transformOrigin: 'top left' });
+
+	var maxH = 0;
+	cards.forEach(function(card, i) {
+		var h = card.offsetHeight;
+		if (h > maxH) maxH = h;
+		gsap.set(card, {
+			transform: 'translate(0px, ' + (-10 * i) + 'px) scale(' + Math.pow(0.9, i) + ', ' + Math.pow(0.9, i) + ')'
+		});
+	});
+
+	container.style.minHeight = (200 + (cards.length - 1) * 50 + maxH) + 'px';
+
+	var tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: container,
-			start: 'top 85%',
-			end: 'bottom 15%',
+			start: 'top top',
+			end: '+=' + (window.innerHeight * 3),
+			pin: container,
 			scrub: 1.5,
-			toggleActions: 'play none none reverse'
+			invalidateOnRefresh: true,
+			anticipatePin: 1
 		}
 	});
 
-	cards.forEach(function(card, index) {
-		var image = card.querySelector('.franchise-catalog__card-image');
-		var title = card.querySelector('.franchise-catalog__card-title');
-		var desc = card.querySelector('.franchise-catalog__card-desc');
-		var descSecond = card.querySelector('.franchise-catalog__card-desc--second');
-
-		gsap.set(card, { opacity: 0, y: 60, scale: 0.98 });
-		gsap.set(image, { scale: 1.05 });
-		gsap.set(title, { opacity: 0, y: 20 });
-		gsap.set(desc, { opacity: 0, y: 15 });
-		if (descSecond) gsap.set(descSecond, { opacity: 0, y: 15 });
-
-		masterTl.to(card, {
-			opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power2.out'
-		}, index * 0.25);
-
-		if (image) {
-			masterTl.fromTo(image,
-				{ scale: 1.05 },
-				{ scale: 1, duration: 0.9, ease: 'power1.out' },
-				index * 0.25 + 0.1
-			);
-		}
-
-		if (title) {
-			masterTl.to(title, {
-				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
-			}, index * 0.25 + 0.2);
-		}
-
-		if (desc) {
-			masterTl.to(desc, {
-				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
-			}, index * 0.25 + 0.35);
-		}
-
-		if (descSecond) {
-			masterTl.to(descSecond, {
-				opacity: 1, y: 0, duration: 0.5, ease: 'power1.out'
-			}, index * 0.25 + 0.5);
-		}
+	cards.forEach(function(card, i) {
+		tl.to(card, {
+			transform: 'translate(0px, 0px) scale(1, 1)',
+			top: (200 + i * 50) + 'px',
+			duration: 0.8,
+			ease: 'power1.out'
+		}, i * 0.3);
 	});
 }
 
@@ -250,7 +233,7 @@ function setupFranchiseAnimation() {
 
 	function handleModeChange(e) {
 		ScrollTrigger.getAll().forEach(function(t) { t.kill(); });
-		if (e.matches && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+		if (e.matches) {
 			initFranchiseCardsAnimation();
 		}
 	}

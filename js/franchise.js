@@ -179,62 +179,39 @@ function initAOS() {
 document.addEventListener('DOMContentLoaded', initAOS)
 window.addEventListener('load', function() { if (typeof AOS !== 'undefined') AOS.refresh() })
 
-/* ---- GSAP Cards Animation ---- */
+gsap.registerPlugin(ScrollTrigger)
 
-function initFranchiseCardsAnimation() {
-	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-	gsap.registerPlugin(ScrollTrigger);
+document.addEventListener('DOMContentLoaded', () => {
+	const cards = gsap.utils.toArray('.franchise-catalog__card')
+	const list = document.querySelector('.franchise-catalog__list')
 
-	var container = document.querySelector('.franchise-catalog__list');
-	if (!container) return;
-
-	var cards = gsap.utils.toArray('.franchise-catalog__card');
-	if (cards.length === 0) return;
-
-	var totalH = 0;
-	cards.forEach(function(c) { totalH += c.offsetHeight; });
-
-	var tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: container,
-			start: 'top top',
-			end: '+=' + (window.innerHeight * 3),
-			pin: true,
-			scrub: 1.5,
-			invalidateOnRefresh: true
-		}
-	});
-
-	cards.forEach(function(card, i) {
-		var targetY = (200 + i * 50) - card.offsetTop;
-		var targetScale = Math.pow(0.9, i);
-
-		tl.to(card, {
-			y: targetY,
-			scale: targetScale,
-			transformOrigin: '0% 0%',
-			duration: 0.8,
-			ease: 'power1.out'
-		}, i * 0.3);
-	});
-}
-
-function setupFranchiseAnimation() {
-	var isDesktop = window.matchMedia('(min-width: 1024px)');
-
-	function handleModeChange(e) {
-		ScrollTrigger.getAll().forEach(function(t) { t.kill(); });
-		if (e.matches) {
-			initFranchiseCardsAnimation();
-		}
+	if (!cards.length || !list) {
+		return
 	}
 
-	handleModeChange(isDesktop);
-	isDesktop.addEventListener('change', handleModeChange);
-}
+	ScrollTrigger.matchMedia({
+		'(min-width: 768px)': function () {
+			cards.forEach((card, index) => {
+				gsap.set(card, {
+					zIndex: cards.length + index,
+				})
 
-if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', setupFranchiseAnimation);
-} else {
-	setupFranchiseAnimation();
-}
+				ScrollTrigger.create({
+					trigger: card,
+					start: `top top+=${100 + index * 10}`,
+					endTrigger: list,
+					end: 'bottom center+=150',
+					pin: true,
+					pinSpacing: false,
+					invalidateOnRefresh: true,
+					anticipatePin: 0,
+				})
+			})
+		},
+
+		// --- МОБИЛЬНЫЕ (ширина экрана < 768px) ---
+		'(max-width: 767.98px)': function () {
+		},
+	})
+
+})

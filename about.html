@@ -8,7 +8,8 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/aos.css" />
-    <link href="css/about.css" type="text/css" rel="stylesheet" />
+    <link href="css/about.css?ver=2" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css" />
 </head>
 
 <body>
@@ -782,35 +783,29 @@
                     </div>
                 </div>
             </section>
+            <!-- ===== CTA Banner (redesigned) ===== -->
             <section class="about-reviews__cta-section-banner">
                 <div class="container">
-                    <div class="about-reviews__cta" style="background-image: url('images/bg-review.svg')">
+                    <div class="about-reviews__cta" style="background-image: url('images/bg-review-new.svg')">
                         <div class="about-reviews__cta-content" data-aos="fade-up" data-aos-delay="200">
-                            <h3 class="about-reviews__cta-title" >Хотите быть с нами в&nbsp;одной команде?
-                                Присоединяйтесь к&nbsp;нашему сообществу!</h3>
-                            <p class="about-reviews__cta-desc">Там мы публикуем анонсы мероприятий, рекомендации
-                                по здоровому образу жизни и бесплатные тренировки, которые помогут вам
-                                всегда оставаться в отличной форме</p>
+                            <h3 class="about-reviews__cta-title">Станьте частью команды и&nbsp;присоединяйтесь к&nbsp;франшизной сети Natural Health</h3>
                         </div>
-                        <div class="about-reviews__cta-mockup"  data-aos="fade-up" data-aos-delay="400">
-                            <div class="about-reviews__cta-mockup-body"
-                                style="background-image: url('images/macbook.png')">
+                        <div class="about-reviews__cta-mockup" data-aos="fade-up" data-aos-delay="300">
+                            <div class="about-reviews__cta-mockup-body" style="background-image: url('images/get-form-cta.png')">
                             </div>
                         </div>
-                        <div class="about-reviews__cta-right"  data-aos="fade-up" data-aos-delay="600">
+                        <div class="about-reviews__cta-right" data-aos="fade-up" data-aos-delay="400">
                             <div class="about-reviews__cta-action">
-                                <form class="about-reviews__cta-form" action="" method="post">
-                                    <input type="email" class="about-reviews__cta-input" placeholder="Присоединиться"
-                                        required>
-                                    <button type="submit" class="about-reviews__cta-submit" aria-label="Подписаться">
-                                        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-                                            <path d="M28 2l8 8-8 8" stroke="currentColor" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M4 10h30" stroke="currentColor" stroke-width="1.5"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </button>
-                                </form>
+                                <button class="about-reviews__cta-btn" data-fancybox data-src="#consultation-popup">
+                                    Получить консультацию
+                                    <svg width="41" height="12" viewBox="0 0 41 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M40.5303 6.05377C40.8232 5.76088 40.8232 5.286 40.5303 4.99311L35.7574 0.22014C35.4645 -0.0727537 34.9896 -0.0727537 34.6967 0.22014C34.4038 0.513033 34.4038 0.987907 34.6967 1.2808L38.9393 5.52344L34.6967 9.76608C34.4038 10.059 34.4038 10.5338 34.6967 10.8267C34.9896 11.1196 35.4645 11.1196 35.7574 10.8267L40.5303 6.05377ZM0 5.52344L-6.55671e-08 6.27344L40 6.27344L40 5.52344L40 4.77344L6.55671e-08 4.77344L0 5.52344Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </button>
+                                <p class="about-reviews__cta-text">Наш менеджер свяжется с вами в ближайшее время</p>
                             </div>
                         </div>
                     </div>
@@ -970,6 +965,56 @@
 
         </main>
 
+        <!-- ===== Consultation Popup (Fancybox) ===== -->
+        <div id="consultation-popup" style="display:none">
+            <div class="popup-form">
+                <div class="popup-form__header">
+                    <h3 class="popup-form__title">Получить консультацию</h3>
+                    <button class="popup-form__close" onclick="Fancybox.close()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <form class="popup-form__form" id="consultation-form" novalidate>
+                    <div class="popup-form__row">
+                        <div class="popup-form__field">
+                            <input type="text" name="surname" placeholder="Фамилия" />
+                        </div>
+                        <div class="popup-form__field">
+                            <input type="text" name="name" placeholder="Имя" />
+                        </div>
+                    </div>
+                    <div class="popup-form__field">
+                        <input type="email" name="email" placeholder="Почта" />
+                    </div>
+
+                    <button type="submit" class="popup-form__submit" id="consultation-submit">
+                        <span class="popup-form__spinner"></span>
+                        <span class="popup-form__btn-text">Отправить отзыв</span>
+                    </button>
+
+                    <div class="popup-form__field">
+                        <label class="popup-form__checkbox">
+                            <input type="checkbox" name="consent" />
+                            <span class="popup-form__checkmark"></span>
+                            <span>Нажимая кнопку «Отправить отзыв» я соглашаюсь с <a href="#" target="_blank">договором — офертой</a> и с <a href="#" target="_blank">политикой обработки персональных данных</a></span>
+                        </label>
+                    </div>
+                </form>
+
+                <div class="popup-form__success">
+                    <div class="popup-form__success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <p class="popup-form__success-text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer">
 
             <div class="footer__inner">
@@ -1051,7 +1096,9 @@
     </div>
     <script src="js/aos.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/about.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="js/about.js?ver=2"></script>
 </body>
 
 </html>

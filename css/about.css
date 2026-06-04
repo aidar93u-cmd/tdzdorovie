@@ -1370,14 +1370,14 @@ button {
 	max-width: 56.6rem;
 }
 
-/* CTA sub-section */
+/* ===== CTA Banner ===== */
 
 .about-reviews__cta {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 4rem;
-	background: var(--gray);
+	background: var(--primary);
 	border-radius: 2rem;
 	padding: 6rem;
 	margin-bottom: 8.2rem;
@@ -1387,36 +1387,21 @@ button {
 }
 
 .about-reviews__cta-content {
-	display: flex;
-	flex-direction: column;
-	gap: 2.4rem;
-	max-width: 49.8rem;
+	max-width: 55rem;
 }
 
 .about-reviews__cta-title {
-	font-weight: 400;
-	font-size: 3.2rem;
-	line-height: 80%;
-	color: var(--black);
-}
-
-.about-reviews__cta-desc {
-	font-size: 2rem;
-	line-height: 110%;
-	color: var(--text-dark);
-}
-
-.about-reviews__cta-right {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 2.2rem;
-	min-width: 40%;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 93%;
+    letter-spacing: 0%;
 }
 
 .about-reviews__cta-mockup {
 	width: 18.1rem;
 	height: 10.9rem;
+	flex-shrink: 0;
 }
 
 .about-reviews__cta-mockup-body {
@@ -1425,77 +1410,318 @@ button {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.about-reviews__cta-right {
+	flex-shrink: 0;
+}
+
+.about-reviews__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 1.6rem 3.2rem;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 8rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.4s, color 0.4s;
+    white-space: nowrap;
+    font-weight: 400;
+    font-style: Book;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    min-width: 490px;
+    justify-content: space-between;
+}
+
+.about-reviews__cta-btn:hover {
+	background: var(--white);
+	color: var(--primary);
+}
+
+.about-reviews__cta-btn svg {
+	width: 4rem;
+	height: 1.2rem;
+	flex-shrink: 0;
+	transition: transform 0.4s;
+}
+
+.about-reviews__cta-btn:hover svg path {
+	fill: var(--primary)
+}
+.about-reviews__cta-text {
+    opacity: 0.6;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+/* ===== Popup form (Fancybox) ===== */
+
+#consultation-popup {
+    max-width: 69.6rem;
+    width: 100%;
+    padding: 6rem;
+    border-radius: 2rem;
+    background: var(--white);
+}
+
+.popup-form__title {
+    color: var(--black);
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 90%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.popup-form__header {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	margin-bottom: 3.2rem;
+    position: relative;
 }
 
-.about-reviews__cta-mockup-screen {
-	width: 14.9rem;
-	height: 9.6rem;
-	background-size: cover;
-	background-position: center;
-	border-radius: 0.2rem;
+.popup-form__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--gray);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--black);
+    transition: background 0.3s;
+    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    top: -20px;
 }
 
-.about-reviews__cta-action {
+.popup-form__close:hover {
+	background: #e8e8e8;
+}
+
+.popup-form__close svg {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.popup-form__form {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	gap: 2.2rem;
-	width: 100%;
+	gap: 8px;
 }
 
-.about-reviews__cta-form {
+.popup-form__row {
 	display: flex;
-	align-items: center;
-	height: 6rem;
-	border: 1px solid var(--text-dark);
-	border-radius: 8rem;
-	overflow: hidden;
-	transition: border-color 0.4s;
-	width: 100%;
+	gap: 8px;
 }
 
-.about-reviews__cta-form:focus-within {
-	border-color: var(--primary);
-}
-
-.about-reviews__cta-input {
+.popup-form__row .popup-form__field {
 	flex: 1;
-	height: 100%;
-	padding: 0 0 0 3rem;
-	border: none;
-	outline: none;
-	background: transparent;
-	font-size: 2.4rem;
-	font-family: var(--main-ff);
-	color: var(--black);
-	min-width: 0;
 }
 
-.about-reviews__cta-input::placeholder {
+.popup-form__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.popup-form__field input[type="text"], 
+.popup-form__field input[type="email"] {
+    width: 100%;
+    height: 5.6rem;
+    padding: 0 2rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    font-family: var(--main-ff);
+    color: var(--black);
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    background: #F7F7F7;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.popup-form__field input::placeholder {
+	color: var(--border);
+}
+
+.popup-form__field input:focus {
+	border-color: var(--primary);
+    background: #fff;
+}
+
+.popup-form__field.popup-form__field--error input {
+	border-color: var(--system);
+}
+
+.popup-form__field--error .popup-form__checkmark {
+	border-color: var(--system);
+}
+
+.popup-form__error {
+	font-size: 1.2rem;
+	line-height: 100%;
+	color: var(--system);
+	min-height: 1.4rem;
+	display: block;
+}
+
+.popup-form__submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	width: 100%;
+	height: 5.6rem;
+	background: var(--primary);
+	color: var(--white);
+	font: var(--text-t2);
+	font-weight: 500;
+	border: none;
+	border-radius: 8rem;
+	cursor: pointer;
+	transition: opacity 0.3s;
+    margin-top: 24px;
+}
+
+.popup-form__submit:hover {
+	opacity: 0.85;
+}
+
+.popup-form__submit:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.popup-form__spinner {
+	display: none;
+	width: 2rem;
+	height: 2rem;
+	border: 2px solid var(--white);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: popup-spin 0.6s linear infinite;
+}
+
+.popup-form__submit--loading .popup-form__spinner {
+	display: inline-block;
+}
+
+.popup-form__submit--loading .popup-form__btn-text {
+	display: none;
+}
+
+@keyframes popup-spin {
+	to { transform: rotate(360deg); }
+}
+
+.popup-form__checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	cursor: pointer;
+	font-size: 1.2rem;
+	line-height: 130%;
 	color: var(--text-dark);
 }
 
-.about-reviews__cta-submit {
+.popup-form__checkbox input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.popup-form__checkmark {
+    flex-shrink: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 1.5px solid #000;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
+    margin-top: 0.1rem;
+}
+
+.popup-form__checkbox input:checked + .popup-form__checkmark {
+	background: var(--primary);
+	border-color: var(--primary);
+}
+
+.popup-form__checkmark::after {
+	content: '';
+	width: 0.4rem;
+	height: 0.8rem;
+	border: solid var(--white);
+	border-width: 0 1.5px 1.5px 0;
+	transform: rotate(45deg);
+	margin-top: -0.1rem;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.popup-form__checkbox input:checked + .popup-form__checkmark::after {
+	opacity: 1;
+}
+
+.popup-form__checkbox a {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
+.popup-form__success {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.6rem;
+	padding: 4rem 2rem;
+	text-align: center;
+}
+
+.popup-form--success .popup-form__header,
+.popup-form--success .popup-form__form {
+	display: none;
+}
+
+.popup-form--success .popup-form__success {
+	display: flex;
+}
+
+.popup-form__success-icon {
+	width: 6rem;
+	height: 6rem;
+	background: var(--primary);
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 6rem;
-	height: 100%;
-	border: none;
-	background: transparent;
-	cursor: pointer;
-	color: var(--black);
-	flex-shrink: 0;
-	transition: background-color 0.4s, color 0.4s;
-	border-radius: 0 8rem 8rem 0;
 }
 
-.about-reviews__cta-submit:hover {
-	background: var(--black);
+.popup-form__success-icon svg {
+	width: 3rem;
+	height: 3rem;
 	color: var(--white);
+}
+
+.popup-form__success-text {
+	font: var(--text-t1);
+	color: var(--text-dark);
 }
 
 /* Reviews section */
@@ -1840,8 +2066,11 @@ button {
 		text-align: center;
 	}
 
-	.about-reviews__cta-action {
-		align-items: center;
+	.about-reviews__cta-btn {
+		width: 100%;
+		justify-content: center;
+        font-size: 16px;
+		min-width: 100%
 	}
 
 	.about-reviews__cards {
@@ -2116,39 +2345,25 @@ button {
     height: 6rem;
 }
 	    .about-reviews__cta {
+        flex-direction: column;
         padding: 4rem 2rem;
-        margin-bottom: 0rem;
-        background-color: var(--primary);
-        text-align: left;
-    gap: 5rem;
-    background-image: url(../images/bg-review-mobile.svg)!important;
+        margin-bottom: 0;
+        gap: 3.2rem;
+        text-align: center;
+        background-image: url(../images/bg-review-mobile.svg);
         background-size: auto;
         background-position-x: right;
         background-position-y: bottom;
     }
 	.about-reviews__cta-title {
 		font-size: 2.6rem;
-        color: #fff;
 	}
-    .about-reviews__cta-desc{
-        color: #fff;
-    font-size: 1.8rem;
-    line-height: 110%;
-    font-weight: 300;
-
-    }.about-reviews__cta-right {
-    width: 100%;
-}
-.about-reviews__cta-submit,
-.about-reviews__cta-input {
-    color: #ffffff;
-    min-width: 0;
-}
-.about-reviews__cta-input::placeholder {
-	color: #ffffff;
-}
-    .about-reviews__cta-mockup{
-        display: none;
+	.about-reviews__cta-mockup {
+		display: none;
+	}
+    .about-reviews__cta-btn {
+        width: 100%;
+        justify-content: center;
     }
 	.about-reviews__section-header {
 		flex-direction: column;
@@ -2272,5 +2487,24 @@ button {
 @media (max-width: 480px) {
 	.about-values__grid {
 		grid-template-columns: 1fr;
+	}
+	#consultation-popup {
+		padding: 2.4rem;
+	}
+	.popup-form__header {
+		margin-bottom: 2.4rem;
+	}
+	.popup-form__title {
+		font-size: 2.5rem;
+	}
+	.popup-form__row {
+		flex-direction: column;
+
+	}
+	.popup-form__close {
+			width: 3rem;
+			height: 3rem;
+			right: 0;
+			top: 0px;
 	}
 }

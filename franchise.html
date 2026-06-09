@@ -7,7 +7,7 @@
     <title>Natural Health</title>
     <meta name="format-detection" content="telephone=no">
     <link href="css/aos.css" type="text/css" rel="stylesheet" />
-    <link href="css/franchise.css?ver=5" type="text/css" rel="stylesheet" /><script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+    <link href="css/franchise.css?ver=5" type="text/css" rel="stylesheet" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css" /><script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
         crossorigin="anonymous"></script>
 </head>
 
@@ -98,8 +98,7 @@
                             <h1 class="franchise-hero__title" data-aos="fade-up" data-aos-delay="200">Откройте прибыльную торговую точку с готовым продуктом и брендом</h1>
                             <p class="franchise-hero__subtitle" data-aos="fade-up" data-aos-delay="400">Натуральная продукция, упакованная франшиза и поддержка на каждом этапе. Запуск острова в торговом центре — за 6–8 недель от заявки.</p>
                             <div class="franchise-hero__actions" data-aos="fade-up" data-aos-delay="600">
-                                <a href="/catalog/" class="franchise-hero__btn">Получить презентацию</a>
-                                <a href="/about/" class="franchise-hero__link">Рассчитать доход</a>
+                                <a data-fancybox data-src="#consultation-popup" class="franchise-hero__btn">Открыть форму</a>
                             </div>
                         </div>
                         <div class="franchise-hero__stats franchise-hero__stats--desktop">
@@ -120,7 +119,6 @@
                             </span>
                             <div class="franchise-hero__stat" data-aos="fade-up" data-aos-delay="400">
                                 <div class="franchise-hero__stat-value">
-                                    <span class="franchise-hero__stat-prefix">от</span>
                                     <span class="franchise-hero__stat-num">2,5</span>
                                     <span class="franchise-hero__stat-unit">млн ₽ /мес</span>
                                 </div>
@@ -285,33 +283,36 @@
                 </style>
                 <div class="container">
                     <div class="franchise-features__inner">
-                        <h2 class="franchise-features__title"  data-aos="fade-up" data-aos-delay="200">
-                            Запрос на БАД, профилактику и натуральный состав растёт каждый год 
+                        <h2 class="franchise-features__title" data-aos="fade-up" data-aos-delay="200">
+                            Запрос на БАД, профилактику и натуральный состав растёт каждый год
                             <span class="franchise-features__title--highlight">— в крупных городах, в регионах и в странах СНГ</span>
                         </h2>
-                        <div class="franchise-features__image" >
+                        <div class="franchise-features__image">
                             <div class="franchise-features__grid franchise-features__grid--bg">
                                 <div class="franchise-features__col-space"></div>
                                 <div class="franchise-features__col-content">
-                                    <div class="franchise-features__text"  data-aos="fade-up" data-aos-delay="200">Устойчивый спрос –<br>40% регулярных покупателей БАД</div>
+                                    <div class="franchise-features__text" data-aos="fade-up" data-aos-delay="200">Устойчивый спрос
+                                        –<br>40% регулярных покупателей БАД</div>
                                     <div class="franchise-features__overlay">
                                         <div class="franchise-features__stats">
-                                            <div class="franchise-features__stat"  data-aos="fade-up" data-aos-delay="400">
+                                            <div class="franchise-features__stat" data-aos="fade-up" data-aos-delay="400">
                                                 <div class="franchise-features__stat-value">
-                                                    <span class="franchise-features__stat-num">+14%</span>
+                                                    <span class="franchise-features__stat-num">+30%</span>
                                                     <span class="franchise-features__stat-unit">В ГОД</span>
                                                 </div>
-                                                <span class="franchise-features__stat-desc">рост рынка ежегодно</span>
+                                                <span class="franchise-features__stat-desc">рост рынка в СНГ в 2025г.</span>
                                             </div>
-                                            <div class="franchise-features__stat"  data-aos="fade-up" data-aos-delay="600">
+                                            <div class="franchise-features__stat" data-aos="fade-up" data-aos-delay="600">
                                                 <div class="franchise-features__stat-value">
-                                                    <span class="franchise-features__stat-num">270</span>
+                                                    <span class="franchise-features__stat-num">370</span>
                                                     <span class="franchise-features__stat-unit">МЛРД ₽</span>
                                                 </div>
-                                                <span class="franchise-features__stat-desc">объём рынка БАД в РФ в 2024</span>
+                                                <span class="franchise-features__stat-desc">совокупный объём БАД в СНГ в 2025г.</span>
                                             </div>
                                         </div>
-                                        <p class="franchise-features__desc"  data-aos="fade-up" data-aos-delay="800">Категория БАДов и функциональных продуктов — одна из самых динамичных в российском фарм- и ритейл-сегменте. Это окно возможностей для партнёра: спрос есть, лояльность к бренду решает.</p>
+                                        <p class="franchise-features__desc" data-aos="fade-up" data-aos-delay="800">Категория БАДов и
+                                            функциональных продуктов — одна из самых динамичных в российском фарм- и ритейл-сегменте.
+                                            Это окно возможностей для партнёра: спрос есть, лояльность к бренду решает.</p>
                                     </div>
                                 </div>
                             </div>
@@ -678,6 +679,56 @@
             </section>
         </main>
 
+        <!-- ===== Consultation Popup (Fancybox) ===== -->
+        <div id="consultation-popup" style="display:none">
+            <div class="popup-form">
+                <div class="popup-form__header">
+                    <h3 class="popup-form__title">Получить консультацию</h3>
+                    <button class="popup-form__close" onclick="Fancybox.close()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <form class="popup-form__form" id="consultation-form" novalidate>
+                    <div class="popup-form__row">
+                        <div class="popup-form__field">
+                            <input type="text" name="surname" placeholder="Фамилия" />
+                        </div>
+                        <div class="popup-form__field">
+                            <input type="text" name="name" placeholder="Имя" />
+                        </div>
+                    </div>
+                    <div class="popup-form__field">
+                        <input type="email" name="email" placeholder="Почта" />
+                    </div>
+
+                    <button type="submit" class="popup-form__submit" id="consultation-submit">
+                        <span class="popup-form__spinner"></span>
+                        <span class="popup-form__btn-text">Отправить отзыв</span>
+                    </button>
+
+                    <div class="popup-form__field">
+                        <label class="popup-form__checkbox">
+                            <input type="checkbox" name="consent" />
+                            <span class="popup-form__checkmark"></span>
+                            <span>Нажимая кнопку «Отправить отзыв» я соглашаюсь с <a href="#" target="_blank">договором — офертой</a> и с <a href="#" target="_blank">политикой обработки персональных данных</a></span>
+                        </label>
+                    </div>
+                </form>
+
+                <div class="popup-form__success">
+                    <div class="popup-form__success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <p class="popup-form__success-text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer" id="footer">
             <div class="footer__inner">
                 <div class="container">
@@ -753,6 +804,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/imask@7.6.1/dist/imask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

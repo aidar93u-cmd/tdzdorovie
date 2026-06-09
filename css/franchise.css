@@ -2686,3 +2686,245 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 			font-size: 2rem;
 	}
 }
+
+/* ===== Consultation Popup (Fancybox) ===== */
+
+#consultation-popup {
+	max-width: 52rem;
+	width: 100%;
+	padding: 4rem;
+	border-radius: 2rem;
+	background: var(--white);
+}
+
+.popup-form__title {
+	font: var(--title-h3);
+	font-weight: 500;
+	color: var(--black);
+}
+
+.popup-form__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 3.2rem;
+}
+
+.popup-form__close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.2rem;
+	height: 3.2rem;
+	background: var(--gray, #f7f7f7);
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	color: var(--black);
+	transition: background 0.3s;
+	flex-shrink: 0;
+}
+
+.popup-form__close:hover {
+	background: #e8e8e8;
+}
+
+.popup-form__close svg {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.popup-form__form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.popup-form__row {
+	display: flex;
+	gap: 1.6rem;
+}
+
+.popup-form__row .popup-form__field {
+	flex: 1;
+}
+
+.popup-form__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.popup-form__field input[type="text"],
+.popup-form__field input[type="email"] {
+	width: 100%;
+	height: 5.6rem;
+	padding: 0 2rem;
+	border: 1px solid var(--border, #bbbbbb);
+	border-radius: 1rem;
+	font: var(--text-t2);
+	font-family: var(--main-ff);
+	color: var(--black);
+	outline: none;
+	transition: border-color 0.3s;
+	box-sizing: border-box;
+}
+
+.popup-form__field input::placeholder {
+	color: var(--border, #bbbbbb);
+}
+
+.popup-form__field input:focus {
+	border-color: var(--primary);
+}
+
+.popup-form__field--error input {
+	border-color: var(--system, #e94545);
+}
+
+.popup-form__field--error .popup-form__checkmark {
+	border-color: var(--system, #e94545);
+}
+
+.popup-form__submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	width: 100%;
+	height: 5.6rem;
+	background: var(--primary);
+	color: var(--white);
+	font: var(--text-t2);
+	font-weight: 500;
+	border: none;
+	border-radius: 8rem;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.popup-form__submit:hover {
+	opacity: 0.85;
+}
+
+.popup-form__submit:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.popup-form__spinner {
+	display: none;
+	width: 2rem;
+	height: 2rem;
+	border: 2px solid var(--white);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: popup-spin 0.6s linear infinite;
+}
+
+.popup-form__submit--loading .popup-form__spinner {
+	display: inline-block;
+}
+
+.popup-form__submit--loading .popup-form__btn-text {
+	display: none;
+}
+
+@keyframes popup-spin {
+	to { transform: rotate(360deg); }
+}
+
+.popup-form__checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	cursor: pointer;
+	font-size: 1.2rem;
+	line-height: 130%;
+	color: var(--text-dark);
+}
+
+.popup-form__checkbox input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.popup-form__checkmark {
+	flex-shrink: 0;
+	width: 1.8rem;
+	height: 1.8rem;
+	border: 1.5px solid var(--border, #bbbbbb);
+	border-radius: 0.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.3s, border-color 0.3s;
+	margin-top: 0.1rem;
+}
+
+.popup-form__checkbox input:checked + .popup-form__checkmark {
+	background: var(--primary);
+	border-color: var(--primary);
+}
+
+.popup-form__checkmark::after {
+	content: '';
+	width: 0.4rem;
+	height: 0.8rem;
+	border: solid var(--white);
+	border-width: 0 1.5px 1.5px 0;
+	transform: rotate(45deg);
+	margin-top: -0.1rem;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.popup-form__checkbox input:checked + .popup-form__checkmark::after {
+	opacity: 1;
+}
+
+.popup-form__checkbox a {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
+.popup-form__success {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.6rem;
+	padding: 4rem 2rem;
+	text-align: center;
+}
+
+.popup-form--success .popup-form__header,
+.popup-form--success .popup-form__form {
+	display: none;
+}
+
+.popup-form--success .popup-form__success {
+	display: flex;
+}
+
+.popup-form__success-icon {
+	width: 6rem;
+	height: 6rem;
+	background: var(--primary);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup-form__success-icon svg {
+	width: 3rem;
+	height: 3rem;
+	color: var(--white);
+}
+
+.popup-form__success-text {
+	font: var(--text-t1);
+	color: var(--text-dark);
+}

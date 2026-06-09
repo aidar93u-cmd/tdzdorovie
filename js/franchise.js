@@ -214,4 +214,71 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	})
 
+	/* ===== Consultation Popup Form ===== */
+
+	Fancybox.bind('[data-fancybox]', {
+		animated: false,
+		dragToClose: true,
+		closeButton: false,
+	})
+
+	var form = document.getElementById('consultation-form')
+	if (form && typeof validate !== 'undefined') {
+		var constraints = {
+			surname: { presence: { message: 'Введите фамилию' } },
+			name: { presence: { message: 'Введите имя' } },
+			email: {
+				presence: { message: 'Введите email' },
+				email: { message: 'Некорректный email' },
+			},
+			consent: { presence: { message: 'Подтвердите согласие' } },
+		}
+
+		function clearPopupErrors() {
+			form.querySelectorAll('.popup-form__field').forEach(function (el) {
+				el.classList.remove('popup-form__field--error')
+			})
+		}
+
+		function showPopupErrors(errors) {
+			clearPopupErrors()
+			Object.keys(errors).forEach(function (field) {
+				var fieldEl = form.querySelector('[name="' + field + '"]')
+				if (fieldEl) {
+					var wrapper = fieldEl.closest('.popup-form__field')
+					if (wrapper) wrapper.classList.add('popup-form__field--error')
+				}
+			})
+		}
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault()
+			clearPopupErrors()
+
+			var formValues = {
+				surname: form.querySelector('[name="surname"]').value.trim(),
+				name: form.querySelector('[name="name"]').value.trim(),
+				email: form.querySelector('[name="email"]').value.trim(),
+				consent: form.querySelector('[name="consent"]').checked ? 'yes' : undefined,
+			}
+
+			var errors = validate(formValues, constraints)
+			if (errors) {
+				showPopupErrors(errors)
+				return
+			}
+
+			var submitBtn = document.getElementById('consultation-submit')
+			submitBtn.classList.add('popup-form__submit--loading')
+			submitBtn.disabled = true
+
+			setTimeout(function () {
+				submitBtn.classList.remove('popup-form__submit--loading')
+				submitBtn.disabled = false
+
+				document.querySelector('.popup-form').classList.add('popup-form--success')
+				form.reset()
+			}, 1500)
+		})
+	}
 })

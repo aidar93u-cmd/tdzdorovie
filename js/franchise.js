@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var formValues = {
                 name: form.querySelector('[name="name"]').value.trim(),
-                phone: phoneMask ? phoneMask.unmaskedValue : form.querySelector('[name="phone"]').value,
+                phone: form.querySelector('[name="phone"]').value.trim(),
                 email: form.querySelector('[name="email"]').value.trim(),
                 consent: form.querySelector('[name="consent"]').checked ? 'yes' : undefined
             };
 
-            var errors = validate(formValues, constraints);
+            var errors = validate(formValues, constraints, { fullMessages: false });
             if (errors) {
                 showErrors(errors);
                 return;
